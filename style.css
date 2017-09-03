@@ -1,6 +1,6 @@
 body {
     margin:0px;
-    background-color: #025AA5;
+    background-color: #E6E2EB;
 }
 
 .container {
@@ -10,10 +10,11 @@ body {
 }
 
 .row {
-    border: 1px solid #de577b;
+    border: 1px solid #0275D8;
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: 5px 5px 2px #DE577B;
+    box-shadow: 5px 5px 20px #de577b;
+    background-color: #0275D8;
 }
 
 
@@ -27,7 +28,17 @@ body {
     margin-right:25px;
     margin-bottom: 25px;
     width:250px;
-   
+    background-color: #74b749;
+    color:#0275D8;
+    font-weight: 800;
+    border:none;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+ 
+  background-color: #DE577B !important;
+  border-color: #494F57 !important;
+  color:#0275D8 ! important;
 }
 
 .inputPrice {
@@ -40,13 +51,14 @@ body {
 }
 
 .title {
-    color:#0275D8;
+    color:black;
     font-weight: 800;
 }
 
 .btn-secondary {
-     color:#0275D8 !important;
+    color:#0275D8 !important;
     font-weight: 800;
+    
 }
 
 .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {

@@ -77,7 +77,7 @@
                 </div>
                 
                 <div class="col">
-                    <fieldset consultantDiscount>  
+                    <fieldset id="consultantDiscount">  
                         <label class="title">Consultant Discount</label>
                         <div class="form-check">
                           <label class="form-check-label">
@@ -117,18 +117,18 @@
                 
             <div class="row">
                 <div class="col">
-                    <fieldset>  
+                    <fieldset id="downPayment">  
                         <label class="title">Down payment</label>
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios2" id="optionsRadios1" value="option1" checked>
+                            <input type="radio" class="form-check-input" name="downPayment"  value="35">
                             35%
                           </label>
                         </div>
 
                         <div class="form-check">
                         <label class="form-check-label ">
-                            <input type="radio" class="form-check-input" name="optionsRadios2" id="optionsRadios2" value="option2">
+                            <input type="radio" class="form-check-input" name="downPayment"  value="50">
                             50%
                           </label>
                         </div>
@@ -136,8 +136,11 @@
                         
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios2" id="customcheckbox3" value="option1" checked>
-                            <input type="text" class="form-control inputPercentage" id="custom1"> 
+                              
+                            <input type="radio" class="form-check-input" name="downPayment" id="customcheckbox3" value="" >
+                              
+                            <input type="text" class="form-control inputPercentage" id="downPaymentInput"> 
+                              
                           </label>
                         </div>
                     </fieldset>
@@ -214,6 +217,19 @@
                 document.getElementById("customcheckbox2").checked = true;
              
             }
+            
+            //down payment field
+            document.getElementById("downPaymentInput").onfocus = function(){
+                document.getElementById("customcheckbox3").checked = true;
+             
+            }
+            
+            
+            
+            
+            
+            
+            
            
             //Submitting the form
             document.getElementById("submit").onclick = function calculate() {
@@ -256,18 +272,38 @@
                 }
                 
                 
+                //getting value of down payment field
+                
+                //initializing array to loop through radio buttons
+                var discount = document.getElementsByName('downPayment');
+                
+                var downPayment = 0;
+                for(var i = 0; i < discount.length; i++){
+                    if (discount[i].checked){
+                        downPayment = discount[i].value;
+                    }
+                    
+                    //getting custom input
+                    if (discount[2].checked){
+                        downPayment = downPayment + document.getElementById('downPaymentInput').value;
+                    }
+                }
+                
+                
                
                 
                 
                 
                 
-                var downPayment = document.getElementById("currentPrice").value;
+                
                 
                 var finance = document.getElementById("currentPrice").value;
                 
                 var month = document.getElementById("currentPrice").value;
                 
-                alert(listPrice + '\n' + currentPrice + '\n' + galleryDiscount + '\n' + consultantDiscount );
+              alert(listPrice + '\n' + currentPrice + '\n' + galleryDiscount + '\n' + consultantDiscount + '\n' + downPayment );
+                
+             
                 
                 
                 
