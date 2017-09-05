@@ -9,12 +9,17 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
         <link rel="stylesheet" href="style.css">
-
+        
+        <script src="jquery.js"></script>
       
     </head>
     <body>
         
-        <div class="container">
+        
+        
+        
+
+        <div class="container ">
             
             <div class="row">
                 <div class="col">
@@ -147,15 +152,15 @@
                 </div>
                 <div class="col">
                     <div>
-                        <button type="button" class="btn btn-secondary" data-toggle="button" aria-pressed="false" autocomplete="off">Finance
+                        <button type="button" id="finance" class="btn btn-secondary">Finance
                         </button>
                     </div>
                 
-                    <fieldset id="months">  
+                    <fieldset id="months" disabled>  
                         <label class="title">Month</label>
                         <div class="form-check">
                           <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionsRadios3" id="optionsRadios1" value="option1" checked>
+                            <input type="radio" class="form-check-input" name="optionsRadios3" id="optionsRadios1" value="option1" >
                             12
                           </label>
                         </div>
@@ -203,6 +208,8 @@
         
         <script>
             
+            
+           
             //making sure clicking on input fields automatically checks the corresponding radiobutton
             
             //Gallery discount field
@@ -226,10 +233,23 @@
             
             
             
+            //toggle finance button that enables/disables Month radio buttons
+            document.getElementById("finance").onclick = function allow() {
+                     if (document.getElementById("finance").classList.contains("active") == false){
+                        document.getElementById("finance").classList.add("active");
+                       document.getElementById("months").disabled = false; 
+                     } 
+                     else {
+                        document.getElementById("finance").classList.remove("active");
+                        document.getElementById("months").disabled = true;
+                    }
+                  
+                }
             
             
             
             
+         
            
             //Submitting the form
             document.getElementById("submit").onclick = function calculate() {
@@ -290,16 +310,30 @@
                 }
                 
                 
+                //getting value of 
+                
+                //initializing array to loop through radio buttons
+                var discount = document.getElementsByName('galleryDiscount');
+                var galleryDiscount = 0;
+                for(var i = 0; i < discount.length; i++){
+                    if (discount[i].checked){
+                        galleryDiscount = discount[i].value;
+                    }
+                    //getting custom input
+                    if (discount[3].checked){
+                        galleryDiscount = galleryDiscount + document.getElementById('galleryDiscountInput').value;
+                    }
+                }
+                
+                
+                
+                
                
                 
                 
+               
                 
                 
-                
-                
-                var finance = document.getElementById("currentPrice").value;
-                
-                var month = document.getElementById("currentPrice").value;
                 
               alert(listPrice + '\n' + currentPrice + '\n' + galleryDiscount + '\n' + consultantDiscount + '\n' + downPayment );
                 

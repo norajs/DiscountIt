@@ -1,12 +1,17 @@
+html, body, .container{
+    height: 100%;
+}
+
 body {
     margin:0px;
     background-color: #E6E2EB;
 }
 
 .container {
-    padding:50px;
     background-color: #74b749;
-   
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
 }
 
 .row {
@@ -19,19 +24,21 @@ body {
 
 
 
-#months {
-   
-}
 
 .btn {
     margin-top:25px;
     margin-right:25px;
     margin-bottom: 25px;
-    width:250px;
-    background-color: #74b749;
-    color:#0275D8;
+    max-width:200px;
+    
+    
     font-weight: 800;
     border:none;
+}
+
+.btn-primary {
+    background-color: black;
+    text-shadow: 2px 2px 20px #de577b;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
@@ -42,12 +49,12 @@ body {
 }
 
 .inputPrice {
-    width:250px;
+    max-width:200px;
 }
 
 
 .inputPercentage {
-    width:230px;
+   max-width:180px; 
 }
 
 .title {
@@ -56,15 +63,17 @@ body {
 }
 
 .btn-secondary {
-    color:#0275D8 !important;
-    font-weight: 800;
-    
+    background-color: white;
 }
 
-.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {
+.active {
+    background-color: #DE577B !important;
+}
+
+
+.btn-secondary:hover, .btn-secondary:active {
  
   background-color: #DE577B !important;
-  border-color: #494F57 !important;
 }
 
 .col {
