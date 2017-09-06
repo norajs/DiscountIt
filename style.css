@@ -15,9 +15,14 @@ body {
 }
 
 .row {
+    
+    
+}
+
+.col {
     border: 1px solid #0275D8;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin: 10px;
     box-shadow: 5px 5px 20px #de577b;
     background-color: #0275D8;
 }
